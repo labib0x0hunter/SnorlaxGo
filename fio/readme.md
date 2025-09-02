@@ -1,11 +1,17 @@
 # fio package - clone of fmt package
 ---
-Supports only int, string, struct for minimalist
+Supports only 
+
+| Concrete Type  |
+|----------------|
+|       Int      |
+|     String     |
+|     Struct     |
 
 ---
 Usage :
 ```go
-import fio
+import "fio"
 
 type user struct {
     Name string
@@ -21,19 +27,6 @@ var bob user = user {
 
 fio.Write(s, n, bob)
 fio.Fwrite(fio.Out, s, n, bob)
-```
 
----
-To-do :
-
-| Verb | Type   |
-|------|--------|
-| %s   | String |
-| %b   | Binary |
-| %d   | Int    |
-| %S   | Struct |
-
-```go
-fio.Write("%s %d %S\n", s, n, bob)
-fio.Fwrite(fio.Out, "%s %d %S\n", s, n, bob)
+fio.Read(&s, &n)
 ```
