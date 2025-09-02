@@ -106,20 +106,20 @@ func Write(v ...interface{}) (int, error) {
 	return Fwrite(os.Stdout, v...)
 }
 
-type A struct {
-	b string
-	z int
-}
+// type A struct {
+// 	b string
+// 	z int
+// }
 
-type B struct {
-	a A
-	b string
-}
+// type B struct {
+// 	a A
+// 	b string
+// }
 
-func main() {
-	var i int = 102222
-	j := A{b: "ABC", z: 100}
-	k := B{a: j, b: "HELLO"}
-	Write("Hello %s", "labib", i, j, k)
-	Write("\n")
-}
+// func main() {
+// 	var i int = 102222
+// 	j := A{b: "ABC", z: 100}
+// 	k := B{a: j, b: "HELLO"}
+// 	Write("Hello %s", "labib", i, j, k)
+// 	Write("\n")
+// }

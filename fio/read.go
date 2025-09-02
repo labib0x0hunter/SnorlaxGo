@@ -2,7 +2,6 @@ package main
 
 import (
 	"errors"
-	"fmt"
 	"io"
 	"os"
 	"reflect"
@@ -187,21 +186,21 @@ func Read(v ...interface{}) (n int, err error) {
 	return Fread(os.Stdin, v...)
 }
 
-type myInt int
+// type myInt int
 
-func main() {
+// func main() {
 
-	var x int
-	var s string
+// 	var x int
+// 	var s string
 
-	Read(&x, &s)
+// 	Read(&x, &s)
 
-	fmt.Println("x: ", x)
-	fmt.Println("s: ", s)
+// 	fmt.Println("x: ", x)
+// 	fmt.Println("s: ", s)
 
-	var y myInt
-	Read(&y)
+// 	var y myInt
+// 	Read(&y)
 
-	fmt.Println("y: ", y)
+// 	fmt.Println("y: ", y)
 
-}
+// }
