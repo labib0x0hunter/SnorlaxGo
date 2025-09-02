@@ -1,2 +1,6 @@
-# Just-Push-Trash
-Exploring, Building, Breaking various things ...
+# SnorlaxGo
+---
+Deep dive into Go internals, including runtime, memory management, and core package clones.
+---
+
+- (fio)[]
