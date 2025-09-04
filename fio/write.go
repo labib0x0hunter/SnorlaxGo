@@ -11,7 +11,7 @@ type writer struct {
 	buf buffer
 }
 
-var workerPool = sync.Pool{
+var writerPool = sync.Pool{
 	New: func() any {
 		return new(writer)
 	},
@@ -20,7 +20,7 @@ var workerPool = sync.Pool{
 // newWriter retrieves a *writer instance from the workerPool.
 // It is used to obtain a reusable writer object for performing write operations.
 func newWriter() *writer {
-	w := workerPool.Get().(*writer)
+	w := writerPool.Get().(*writer)
 	return w
 }
 
@@ -28,7 +28,7 @@ func newWriter() *writer {
 // It truncates the internal buffer and returns the writer to the worker pool for reuse.
 func (w *writer) free() {
 	w.buf.truncate()
-	workerPool.Put(w)
+	writerPool.Put(w)
 }
 
 // formatInt converts an integer value to its decimal string representation

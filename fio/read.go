@@ -187,18 +187,6 @@ func (r *reader) processRead(v ...interface{}) (n int, err error) {
 		n++
 	}
 	// Error - handling missing here ...
-
-	// // READ UNTIL EOF or NL
-	// for {
-	// 	b, err := r.reader.ReadByte()
-	// 	if err != nil || err == io.EOF {
-	// 		break
-	// 	}
-
-	// 	if b == '\n' {
-	// 		break
-	// 	}
-	// }
 	return
 }
 
