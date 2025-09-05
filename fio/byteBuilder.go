@@ -1,5 +1,7 @@
 package fio
 
+import "unsafe"
+
 // Write at len(buf)
 type ByteBuilder struct {
 	buf []byte
@@ -16,8 +18,9 @@ func (b *ByteBuilder) Bytes() []byte {
 }
 
 // string
+// b.buf can change the string..
 func (b *ByteBuilder) String() string {
-	return string(b.buf[:len(b.buf)])
+	return unsafe.String(unsafe.SliceData(b.buf), len(b.buf))
 }
 
 func (b *ByteBuilder) Len() int {
