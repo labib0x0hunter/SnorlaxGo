@@ -30,3 +30,14 @@ fio.Fwrite(fio.Out, s, n, bob)
 
 fio.Read(&s, &n)
 ```
+
+```go
+var b fio.ByteBuilder
+
+b.WriteString("hello")
+b.WriteBytes([]byte(" world"))
+b.WriteByte('\n')
+
+fio.Write(b.String())
+fio.Write(b.Byte())
+```
