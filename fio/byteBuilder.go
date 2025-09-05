@@ -20,6 +20,10 @@ func (b *ByteBuilder) String() string {
 	return string(b.buf[:len(b.buf)])
 }
 
+func (b *ByteBuilder) Len() int {
+	return len(b.buf)
+}
+
 // if capacity is less than l + n, then grow by 2 * l + n
 // allocate a new slice of capacity
 // copy the old buffer to new
